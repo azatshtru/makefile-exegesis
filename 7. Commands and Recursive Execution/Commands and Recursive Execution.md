@@ -10,7 +10,8 @@
 # Environment exports
 - To use variables everywhere/globally in Makefile, export them using `export var=something`
 - To export every variable, use: 
-```.EXPORT_ALL_VARIABLES:
+```
+    .EXPORT_ALL_VARIABLES:
     var=something
     another_var=another_thing
 ```
