@@ -6,6 +6,11 @@ all: $(obj_files)
 # `%` has a stem that can be replaced by something while matching target
 # after that `%` can be used in dependencies and will be replaced by the stem matched in target
 
+# simple pattern subsitution can be done using the % wildcard
+# syntax `$(foo%=%bar)
+# example below matches all the .c in src_files, then replaces them with .o and stores in obj_from_src
+obj_from_src := $(src_files:%.c=%.o)
+
 # filter `.o` targets from obj_files and replace % with their names,
 # then set corresponding `.c` files with same names in % as their dependencies.
 $(filter %.o,$(obj_files)): %.o: %.c 
